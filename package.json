@@ -1,0 +1,31 @@
+{
+  "name": "@hyrious/sort-package-json",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Sort package.json",
+  "author": "hyrious <hyrious@outlook.com>",
+  "license": "MIT",
+  "repository": "hyrious/sort-package-json",
+  "keywords": [
+    "keys",
+    "sort",
+    "object"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": "dist/cli.js",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "@hyrious/configs": "^0.1.2",
+    "@types/node": "^20.14.11",
+    "esbuild": "^0.23.0",
+    "sade": "^1.8.1"
+  },
+  "packageManager": "pnpm@9.5.0"
+}
