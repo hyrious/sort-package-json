@@ -1,7 +1,7 @@
 {
   "name": "@hyrious/sort-package-json",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Sort package.json",
   "author": "hyrious <hyrious@outlook.com>",
   "license": "MIT",
