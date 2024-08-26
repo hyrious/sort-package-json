@@ -8,8 +8,8 @@ sade(`${name}`, true)
   .version(version)
   .describe(description)
   .option('-c, --check', 'Check if files are sorted', false)
-  .option('-q, --quite', 'Do not output success messages', false)
-  .action(function main({ _: files, check, quite }: { _: string[], check: boolean, quite: boolean }) {
+  .option('-q, --quiet', 'Do not output success messages', false)
+  .action(function main({ _: files, check, quiet }: { _: string[], check: boolean, quiet: boolean }) {
     if (!files.length) files = ['package.json']
     for (const file of files) try {
       const raw = fs.readFileSync(file, 'utf8')
@@ -17,14 +17,14 @@ sade(`${name}`, true)
       if (raw != sorted) {
         if (check) {
           process.exitCode = 1
-          if (!quite) console.warn(file)
+          if (!quiet) console.warn(file)
         }
         else {
           fs.writeFileSync(file, sorted)
-          if (!quite) console.log(' ✅', file)
+          if (!quiet) console.log(' ✅', file)
         }
       }
     } catch {}
-    if (!check && !quite) console.log('Done.')
+    if (!check && !quiet) console.log('Done.')
   })
   .parse(process.argv)
